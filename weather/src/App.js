@@ -54,8 +54,8 @@ class App extends Component {
               return (
                 <tr key={index}>
                   <td>{fin}</td>
-                  <td>{data.temp.day}C</td>
-                  <td>{(data.temp.max-data.temp.min)}C</td>
+                  <td>{data.temp.day.toFixed(0)}C</td>
+                  <td>{(data.temp.max-data.temp.min).toFixed(2)}C</td>
                 </tr>
               )
             })}

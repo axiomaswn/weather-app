@@ -48,9 +48,12 @@ class App extends Component {
           </thead>
           <tbody>
             {this.state.datas.map((data, index) => {
+              let date = new Date(0)
+              date.setUTCSeconds(data.dt)
+              let fin = JSON.stringify(date).slice(1, 11)
               return (
                 <tr key={index}>
-                  <td>{data.dt}</td>
+                  <td>{fin}</td>
                   <td>{data.temp.day}C</td>
                   <td>{(data.temp.max-data.temp.min)}C</td>
                 </tr>

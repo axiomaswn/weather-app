@@ -17,7 +17,6 @@ class App extends Component {
       return res.json();
     })
     .then(function(data) {
-      console.log(data);
       appThis.setState({
         datas: data.list
       })
@@ -48,11 +47,15 @@ class App extends Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>date</td>
-              <td>0C</td>
-              <td>0C</td>
-            </tr>
+            {this.state.datas.map((data, index) => {
+              return (
+                <tr key={index}>
+                  <td>{data.dt}</td>
+                  <td>{data.temp.day}C</td>
+                  <td>{(data.temp.max-data.temp.min)}C</td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
       </div>

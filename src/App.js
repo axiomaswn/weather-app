@@ -5,11 +5,15 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
+      city:'City',
       datas: [],
     }
   }
   changeCity(e) {
     const ct = e.target.value
+    this.setState({
+      city: ct
+    })
     const appThis = this
     fetch(`http://api.openweathermap.org/data/2.5/forecast/daily?q=${ct}&mode=json&units=metric&cnt=5&APPID=481e3bc28e5264e5607c2b65b449bfc1`)
     .then(function(res) {
@@ -36,7 +40,7 @@ class App extends Component {
         <table>
           <thead>
             <tr>
-              <th>City</th>
+              <th>{this.state.city}</th>
               <th>Temperature</th>
               <th>Variance</th>
             </tr>

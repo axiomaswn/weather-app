@@ -17,7 +17,21 @@
 .App-intro {
   font-size: large;
 }
+select {
+  margin-bottom: 20px;
+}
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
 
+table, th, td {
+   border: 1px solid black;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
